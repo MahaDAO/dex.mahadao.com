@@ -1,11 +1,11 @@
-CryptoControl DEX - Decentralized Exchange for CCIO
+MahaDAO DEX - Decentralized Exchange for MahaDAO
 ==================================================
 
-CryptoControl DEX is a fork of OasisDEX by MakerDAO. It allows you to trade CCIO tokens with ETH.
+MahaDAO DEX is a fork of OasisDEX by MakerDAO. It allows you to trade MAHA tokens with ETH & MATIC.
 
 This is a simple on-chain OTC market for ERC20 Standard Tokens on the Ethereum Blockchain. You can either pick an order from the order book (in which case delivery will happen instantly), or submit a new order yourself.
 
-**CryptoControl DEX is undergoing alpha testing: Proceed at your own risk, and use only small amounts of ETH and MKR.**
+**MahaDAO DEX is undergoing alpha testing: Proceed at your own risk, and use only small amounts of ETH and MKR.**
 
 ## Overview
 

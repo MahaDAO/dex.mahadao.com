@@ -76,25 +76,25 @@ export function doHashChange() {
 
   if (location.hash.indexOf('#wrap') === -1 && location.hash.indexOf('#transfer') === -1) {
     if (location.hash.indexOf('#trade') === -1) {
-      location.hash = `#trade/${localStorage.getItem('baseCurrency') || 'CCIO'}`
+      location.hash = `#trade/${localStorage.getItem('baseCurrency') || 'MAHA'}`
         + `/${localStorage.getItem('quoteCurrency') || 'TUSD'}`;
     }
     const coins = location.hash.replace(/#trade\//g, '').split('/');
 
     /**
      * The default values for base and quote are respectively:
-     * CCIO and TUSD in all scenarios. The reason for this is
+     * MAHA and TUSD in all scenarios. The reason for this is
      * because those are the main currencies that MAKER is dealing with.
      */
     const base = coins[0];
-    baseCurrency = asToken(base, 'CCIO');
+    baseCurrency = asToken(base, 'MAHA');
 
     const quote = coins[1];
     quoteCurrency = asToken(quote, 'TUSD');
 
     if (baseCurrency === quoteCurrency) {
       quoteCurrency = 'TUSD';
-      baseCurrency = 'CCIO';
+      baseCurrency = 'MAHA';
     }
 
     // Looking for any existing pair that contains the currencies provided in the URL
@@ -108,7 +108,7 @@ export function doHashChange() {
       quoteCurrency = pair.quote;
     } else {
       quoteCurrency = 'TUSD';
-      baseCurrency = 'CCIO';
+      baseCurrency = 'MAHA';
     }
 
     Session.set('newPairSelected', pair);

@@ -36,7 +36,7 @@ const tokenSpecs = {
   'W-ETH': { precision: 18, format: '0,0.00[0000000000000000]' },
   DAI: { precision: 18, format: '0,0.00[0000000000000000]' },
   SAI: { precision: 18, format: '0,0.00[0000000000000000]' },
-  CCIO: { precision: 8, format: '0,0.0[0000000]' },
+  MAHA: { precision: 8, format: '0,0.0[0000000]' },
   TUSD: { precision: 18, format: '0,0.00[0000000000000000]' },
   ENA: { precision: 8, format: '0,0.0[0000000]' },
 };
@@ -45,12 +45,12 @@ Dapple.getQuoteTokens = () => ['W-ETH'];
 
 Dapple.getBaseTokens = () => [];
 
-Dapple.getTokens = () => ['W-ETH', 'CCIO', 'TUSD', 'ENA'];
+Dapple.getTokens = () => ['W-ETH', 'MAHA', 'TUSD', 'ENA'];
 
 Dapple.generatePairs = () => {
   const TradingPairs = [
     {
-      base: 'CCIO',
+      base: 'MAHA',
       quote: 'TUSD',
       priority: 10,
     },
