@@ -320,7 +320,7 @@ Template.registerHelper('formatPrice', (value, currency) => {
       displayValue = new BigNumber(displayValue);
     }
 
-    if (currency === 'W-ETH') {
+    if (currency === 'WMATIC') {
       const usd = EthTools.ticker.findOne('usd');
       if (usd) {
         const usdValue = displayValue.times(usd.price);

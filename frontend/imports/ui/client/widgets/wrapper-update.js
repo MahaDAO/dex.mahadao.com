@@ -29,7 +29,7 @@ Template.wrapperUpdate.viewmodel({
   unwrap() {
     const amount = Session.get('oldWrapperBalance');
     this.inProgress(true);
-    Dapple.getToken('OW-ETH', (error, token) => {
+    Dapple.getToken('OW-MATIC', (error, token) => {
       if (!error) {
         this.current(33);
         this.message('Start unwrapping ...');

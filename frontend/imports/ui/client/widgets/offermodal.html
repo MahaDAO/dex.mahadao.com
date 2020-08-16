@@ -137,7 +137,7 @@
                             </span>
                               <span class="order-warning-text text-clarifications">
                                 You don't have enough
-                                {{#if equals sellCurrency 'W-ETH'}}
+                                {{#if equals sellCurrency 'WMATIC'}}
                                   <a href="#ethtokens" {{b  "click: dismiss"}}>{{sellCurrency}}</a>
                                 {{else}}
                                   {{sellCurrency}}
@@ -220,7 +220,7 @@
                                           {{estimateGasInETH gasEstimateResult}}
                                           <div class="col-xs-6 no-padding ">
                                             <span class="dex-currency-label dex-gas-label">
-                                              Gas {{{formatNumber gasEstimateInETH 4 true}}} ETH
+                                              Gas {{{formatNumber gasEstimateInETH 4 true}}} MATIC
                                             </span>
                                           </div>
                                           <div class="col-xs-6">
@@ -503,7 +503,7 @@
                                           <div class="col-xs-6 no-padding">
                                             <span class="dex-currency-label dex-gas-label">
                                               Gas <span class="highlighted"> {{{formatNumber gasEstimateInETH 4 true}}}
-                                              ETH</span>
+                                              MATIC</span>
                                             </span>
                                           </div>
                                           <div class="col-xs-6">

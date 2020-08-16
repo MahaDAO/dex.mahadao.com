@@ -16,9 +16,10 @@ export function convertToTokenPrecision(amount, token) {
   throw new Error('Token not found when converting');
 }
 
-export function convertTo18Precision(amount, token) {
+export function convertTo18Precision(amount = 0, token) {
   if (typeof token !== 'undefined' && token !== '') {
     const tokenSpecs = Dapple.getTokenSpecs(token);
+    console.log(token, tokenSpecs)
     if (tokenSpecs) {
       if (tokenSpecs.precision === 18) {
         return amount;

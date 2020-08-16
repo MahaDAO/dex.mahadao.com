@@ -69,7 +69,7 @@ export function doTabShow() {
 
 export function doHashChange() {
   // For now is the only currency on the left side
-  localStorage.setItem('quoteCurrency', 'TUSD');
+  localStorage.setItem('quoteCurrency', 'WMATIC');
 
   let quoteCurrency = null;
   let baseCurrency = null;
@@ -77,23 +77,23 @@ export function doHashChange() {
   if (location.hash.indexOf('#wrap') === -1 && location.hash.indexOf('#transfer') === -1) {
     if (location.hash.indexOf('#trade') === -1) {
       location.hash = `#trade/${localStorage.getItem('baseCurrency') || 'MAHA'}`
-        + `/${localStorage.getItem('quoteCurrency') || 'TUSD'}`;
+        + `/${localStorage.getItem('quoteCurrency') || 'WMATIC'}`;
     }
     const coins = location.hash.replace(/#trade\//g, '').split('/');
 
     /**
      * The default values for base and quote are respectively:
-     * MAHA and TUSD in all scenarios. The reason for this is
+     * MAHA and WMATIC in all scenarios. The reason for this is
      * because those are the main currencies that MAKER is dealing with.
      */
     const base = coins[0];
     baseCurrency = asToken(base, 'MAHA');
 
     const quote = coins[1];
-    quoteCurrency = asToken(quote, 'TUSD');
+    quoteCurrency = asToken(quote, 'WMATIC');
 
     if (baseCurrency === quoteCurrency) {
-      quoteCurrency = 'TUSD';
+      quoteCurrency = 'WMATIC';
       baseCurrency = 'MAHA';
     }
 
@@ -107,7 +107,7 @@ export function doHashChange() {
       baseCurrency = pair.base;
       quoteCurrency = pair.quote;
     } else {
-      quoteCurrency = 'TUSD';
+      quoteCurrency = 'WMATIC';
       baseCurrency = 'MAHA';
     }
 

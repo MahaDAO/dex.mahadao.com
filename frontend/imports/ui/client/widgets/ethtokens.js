@@ -32,7 +32,7 @@ Template.ethtokens.viewmodel({
       if (this.type() === DEPOSIT) {
         amount = web3Obj.fromWei(Session.get('ETHBalance'));
       } else if (this.type() === WITHDRAW) {
-        amount = web3Obj.fromWei(Tokens.findOne('W-ETH').balance);
+        amount = web3Obj.fromWei(Tokens.findOne('WMATIC').balance);
       }
     } catch (e) {
       amount = '0';
@@ -51,13 +51,13 @@ Template.ethtokens.viewmodel({
     $(event.target).find('input.with-max-btn').focus();
   },
   progress() {
-    return Session.get(`ETH${uppercaseFirstLetter(this.type())}Progress`);
+    return Session.get(`MATIC${uppercaseFirstLetter(this.type())}Progress`);
   },
   progressMessage() {
-    return Session.get(`ETH${uppercaseFirstLetter(this.type())}ProgressMessage`);
+    return Session.get(`MATIC${uppercaseFirstLetter(this.type())}ProgressMessage`);
   },
   errorMessage() {
-    return Session.get(`ETH${uppercaseFirstLetter(this.type())}ErrorMessage`);
+    return Session.get(`MATIC${uppercaseFirstLetter(this.type())}ErrorMessage`);
   },
   maxAmount() {
     let maxAmount = '0';
@@ -65,7 +65,7 @@ Template.ethtokens.viewmodel({
       if (this.type() === DEPOSIT) {
         maxAmount = web3Obj.fromWei(Session.get('ETHBalance'));
       } else if (this.type() === WITHDRAW) {
-        maxAmount = web3Obj.fromWei(Tokens.findOne('W-ETH').balance);
+        maxAmount = web3Obj.fromWei(Tokens.findOne('WMATIC').balance);
       }
     } catch (e) {
       maxAmount = '0';
@@ -91,7 +91,7 @@ Template.ethtokens.viewmodel({
         value: web3Obj.toWei(this.amount()),
       };
       // XXX EIP20
-      Dapple.getToken('W-ETH', (error, token) => {
+      Dapple.getToken('WMATIC', (error, token) => {
         if (!error) {
           Session.set('ETHDepositProgress', 33);
           Session.set('ETHDepositProgressMessage', 'Starting wrap... (waiting for your approval)');
@@ -117,7 +117,7 @@ Template.ethtokens.viewmodel({
       });
     } else {
       // XXX EIP20
-      Dapple.getToken('W-ETH', (error, token) => {
+      Dapple.getToken('WMATIC', (error, token) => {
         if (!error) {
           Session.set('ETHWithdrawProgress', 33);
           Session.set('ETHWithdrawProgressMessage', 'Starting unwrap... (waiting for your approval)');

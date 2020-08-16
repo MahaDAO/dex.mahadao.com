@@ -851,11 +851,11 @@ const tokenAbi = [
 ];
 
 const envConfig = {
-  kovan: {
+  mumbai: {
     oldMKRAddress: '0x4bb514a7f83fbb13c2b41448208e89fabbcfe2fb',
     redeemerAddress: '0x2c0f31271673cc29927be725104642aad65a253e',
   },
-  live: {
+  matic: {
     oldMKRAddress: '0xc66ea802717bfb9833400264dd12c2bceaa34a6d',
     redeemerAddress: '0x642ae78fafbb8032da552d619ad43f1d81e4dd7c',
   },

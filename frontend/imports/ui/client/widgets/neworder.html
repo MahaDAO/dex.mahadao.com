@@ -76,7 +76,7 @@
                 <span class="help-block">Amount is invalid because {{baseCurrency}} has no decimals.</span>
               {{/unless}}
               {{#unless hasBalance sellCurrency}}
-                <span class="help-block">You don't have enough {{#if equals sellCurrency 'W-ETH'}}
+                <span class="help-block">You don't have enough {{#if equals sellCurrency 'WMATIC'}}
                   <a href="#wrap">{{sellCurrency}}</a>{{else}}{{sellCurrency}}{{/if}}
                   tokens.</span>
               {{else}}

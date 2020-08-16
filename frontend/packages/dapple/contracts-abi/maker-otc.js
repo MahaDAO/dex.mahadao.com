@@ -11,13 +11,13 @@ if (typeof Dapple === 'undefined') {
 Dapple['maker-otc'] = (function builder() {
   var environments = {
     'develop': {},
-    'live': {
+    'matic': {
       'otc': {
         'value': '',
         'type': 'MatchingMarket',
       },
     },
-    'kovan': {
+    'mumbai': {
       'otc': {
         'value': '',
         'type': 'MatchingMarket',

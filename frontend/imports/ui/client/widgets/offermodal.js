@@ -555,8 +555,8 @@ Template.offermodal.viewmodel({
   },
   fetchCurrentPriceInUSD() {
     if (!this.priceInUSD()) {
-      $.get('https://api.coinmarketcap.com/v1/ticker/ethereum/', (data) => {
-        this.priceInUSD(data[0].price_usd);
+      $.get('https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=usd', (data) => {
+        this.priceInUSD(data['matic-network'].usd);
       }).fail((error) => console.debug(error));
     }
   },

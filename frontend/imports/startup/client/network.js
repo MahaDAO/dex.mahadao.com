@@ -42,8 +42,8 @@ function checkAccounts() {
 }
 
 function checkIfUserHasBalanceInOldWrapper(userAddress) {
-  // Named the old wrapper - OW-ETH
-  Dapple.getToken('OW-ETH', (error, token) => {
+  // Named the old wrapper - OW-MATIC
+  Dapple.getToken('OW-MATIC', (error, token) => {
     if (!error) {
       if (token) {
         token.balanceOf(userAddress, (err, balance) => {
@@ -166,7 +166,7 @@ function denotePrecision() {
 // Initialize everything on new network
 function initNetwork(newNetwork) {
   Dapple.init(newNetwork);
-  const market = Dapple['maker-otc'].environments.kovan.otc;
+  const market = Dapple['maker-otc'].environments.mumbai.otc;
   checkAccounts().then(async (account) => {
     await checkIfUserHasOldMKR(account);
     checkIfUserHasBalanceInOldWrapper(account);
@@ -225,16 +225,17 @@ function checkNetwork() {
         if (isConnected === true) {
           web3Obj.version.getNetwork((e, res) => {
             let network = false;
+            console.log(res)
             if (!e) {
               switch (res) {
-                case '1':
-                  network = 'main';
+                case '137':
+                  network = 'matic';
                   Session.set('AVGBlocksPerDay', 5760);
                   break;
-                case '42':
-                  network = 'kovan';
-                  Session.set('AVGBlocksPerDay', 21600);
-                  break;
+                // case '42':
+                //   network = 'kovan';
+                //   Session.set('AVGBlocksPerDay', 21600);
+                //   break;
                 default:
                   network = 'private';
               }
@@ -262,7 +263,7 @@ $(window).on('hashchange', () => {
 
   if (Session.get('isMatchingEnabled')) {
     if (baseAfterChange !== baseBeforeChange || quoteAfterChange !== quoteBeforeChange) {
-      Offers.sync();
+      Offers.sync();7
     }
   }
 

@@ -74,6 +74,7 @@ class TokenEventCollection extends Mongo.Collection {
   syncEvents(tokenId, events) {
     const rows = [];
     for (let i = 0; i < events.length; i++) {
+      console.log(tokenId, events[i])
       rows[i] = this.prepareRow(tokenId, events[i]);
     }
     super.batchInsert(rows, () => {});
@@ -115,6 +116,7 @@ class TokenEventCollection extends Mongo.Collection {
   watchTokenEvents(latestBlock) {
     // console.log('filtering token events from ', Session.get('startBlock'));
     const ALL_TOKENS = Dapple.getTokens();
+    console.log(ALL_TOKENS)
     ALL_TOKENS.forEach((tokenId) => {
       Dapple.getToken(tokenId, (error, token) => {
         // console.log(tokenId);
@@ -157,7 +159,7 @@ class TokenEventCollection extends Mongo.Collection {
               }
             });
           });
-          if (tokenId === 'W-ETH') {
+          if (tokenId === 'WMATIC') {
             token.Deposit({who: address}, {
               fromBlock: latestBlock - (Session.get('AVGBlocksPerDay') * 7), // Last 7 days
             }).get((err, result) => {

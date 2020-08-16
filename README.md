@@ -1,11 +1,11 @@
 MahaDAO DEX - Decentralized Exchange for MahaDAO
 ==================================================
 
-MahaDAO DEX is a fork of OasisDEX by MakerDAO. It allows you to trade MAHA tokens with ETH & MATIC.
+MahaDAO DEX is a fork of OasisDEX by MakerDAO. It allows you to trade MAHA tokens with MATIC & MATIC.
 
 This is a simple on-chain OTC market for ERC20 Standard Tokens on the Ethereum Blockchain. You can either pick an order from the order book (in which case delivery will happen instantly), or submit a new order yourself.
 
-**MahaDAO DEX is undergoing alpha testing: Proceed at your own risk, and use only small amounts of ETH and MKR.**
+**MahaDAO DEX is undergoing alpha testing: Proceed at your own risk, and use only small amounts of MATIC and MKR.**
 
 ## Overview
 

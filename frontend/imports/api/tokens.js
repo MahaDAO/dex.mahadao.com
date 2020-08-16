@@ -81,8 +81,9 @@ class TokensCollection extends Mongo.Collection {
                 }
               });
               const contractAddress = Dapple['maker-otc'].environments[Dapple.env].otc.value;
-              token.allowance(address, contractAddress, (callError, allowance) => {
+              token.allowance(address, contractAddress, (callError, _allowance) => {
                 if (!error) {
+                  const allowance = _allowance || 0;
                   super.upsert(tokenId, { $set: {
                     allowance: convertTo18Precision(allowance, tokenId).toString(10),
                     realAllowance: allowance.toString(10),

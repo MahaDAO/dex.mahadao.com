@@ -6,10 +6,10 @@ import Tokens from '/imports/api/tokens';
 import './depositbalance.html';
 
 Template.depositbalance.viewmodel({
-  selectedToken: 'ETH',
+  selectedToken: 'MATIC',
   wethBalance() {
     try {
-      const token = Tokens.findOne('W-ETH');
+      const token = Tokens.findOne('WMATIC');
       return token.balance;
     } catch (e) {
       return '0';
@@ -29,7 +29,7 @@ Template.depositbalance.viewmodel({
   baseChange(e) {
     if (e.currentTarget.id === 'eth-balance') {
       Session.set('tokenTemplate', 'ethtokens');
-      this.selectedToken('ETH');
+      this.selectedToken('MATIC');
     } else if (e.currentTarget.id === 'gnt-balance') {
       Session.set('tokenTemplate', 'gnttokens');
       this.selectedToken('GNT');
