@@ -5,6 +5,7 @@ import './noaccount.html';
 
 Template.noAccount.helpers({
   metamask: function metamask() {
+    window.ethereum.enable().then(() => window.location.reload());
     return web3Obj &&
            web3Obj.currentProvider &&
            (
