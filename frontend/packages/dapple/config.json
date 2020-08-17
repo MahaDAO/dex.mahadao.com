@@ -5,7 +5,7 @@
       "blockNumber": 3053642
     },
     "matic": {
-      "address": "0x37B3d851B73C3d342B10Bb258fa9Ba77685b4722",
+      "address": "0x37b3d851b73c3d342b10bb258fa9ba77685b4722",
       "blockNumber": 3053642
     }
   },
@@ -18,7 +18,7 @@
     },
     "matic": {
       "OW-MATIC": "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
-      "WMATIC": "0xcd3882232e36ad188968bcc4dbc742c14d6a6b21",
+      "WMATIC": "0xdd185af1bb417469461edbc95f22df9781a04624",
       "DAI": "0x84000b263080bc37d1dd73a29d92794a6cf1564e",
       "MAHA": "0x2b021b4c9f6623e699dbeabedaae19590bd81baf",
       "ETH": "0x8cc8538d60901d19692f5ba22684732bc28f54a3"
