@@ -33,13 +33,8 @@ Template.registerHelper('contractAddress', () => {
 Template.registerHelper('contractHref', () => {
   let contractHref = '';
   if (Dapple['maker-otc'].objects) {
-    const network = Session.get('network');
-    let networkPrefix = '';
-    if (network === 'kovan') {
-      networkPrefix = 'kovan.';
-    }
     const contractAddress = Dapple['maker-otc'].environments[Dapple.env].otc.value;
-    contractHref = `https://${networkPrefix}etherscan.io/address/${contractAddress}`;
+    contractHref = `https://explorer.matic.network/address/${contractAddress}`;
   }
   return contractHref;
 });

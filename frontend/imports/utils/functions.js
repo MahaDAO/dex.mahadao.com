@@ -125,12 +125,7 @@ export function doHashChange() {
 export function txHref(tx) {
   let txLink = '';
   if (Dapple['maker-otc'].objects) {
-    const network = Session.get('network');
-    let networkPrefix = '';
-    if (network === 'kovan') {
-      networkPrefix = 'kovan.';
-    }
-    txLink = `https://${networkPrefix}etherscan.io/tx/${tx}`;
+    txLink = `https://explorer.matic.network/tx/${tx}`;
   }
   return txLink;
 }
